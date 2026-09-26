@@ -1,0 +1,786 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: #dff3fa;
+  color: #5c5960;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+  display: none;
+
+  min-height: 100vh;
+  width: 100%;
+
+  padding: 35px 20px;
+
+  position: relative;
+
+  overflow-x: hidden;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #e6f6fb 0px,
+      #e6f6fb 45px,
+      #d9f0f7 45px,
+      #d9f0f7 90px
+    );
+}
+
+.page.active {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  animation: fadeIn 0.6s ease;
+}
+
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+#password {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      #fff8fb,
+      #dff3fa 65%
+    );
+}
+
+.password-box {
+  width: min(90%, 400px);
+
+  background: rgba(255,255,255,0.92);
+
+  padding: 45px 30px;
+
+  border-radius: 30px;
+
+  text-align: center;
+
+  box-shadow:
+    0 20px 50px rgba(70,100,110,0.15);
+}
+
+
+.heart {
+  font-size: 52px;
+
+  color: #df5575;
+
+  margin-bottom: 10px;
+}
+
+
+.password-box h1 {
+  font-family: "Berkshire Swash", cursive;
+
+  font-size: 32px;
+
+  color: #df5575;
+
+  margin-bottom: 10px;
+}
+
+
+.password-box p {
+  margin-bottom: 20px;
+}
+
+
+#passwordInput {
+  width: 100%;
+
+  padding: 14px;
+
+  border: 2px solid #f1b4c5;
+
+  border-radius: 15px;
+
+  font-size: 18px;
+
+  text-align: center;
+
+  outline: none;
+
+  margin-bottom: 15px;
+}
+
+
+#passwordInput:focus {
+  border-color: #df5575;
+}
+
+
+button {
+  border: none;
+
+  cursor: pointer;
+
+  font-family: inherit;
+}
+
+
+.password-box button,
+.welcome-box button,
+.final-button {
+  background: #df5575;
+
+  color: white;
+
+  padding: 13px 28px;
+
+  border-radius: 25px;
+
+  font-size: 16px;
+
+  transition: 0.25s;
+}
+
+
+.password-box button:hover,
+.welcome-box button:hover,
+.final-button:hover {
+  transform: scale(1.05);
+
+  background: #cf4565;
+}
+
+
+#passwordError {
+  color: #df5575;
+
+  min-height: 20px;
+
+  margin-top: 12px;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.stars {
+  position: absolute;
+
+  top: 12%;
+
+  font-size: 25px;
+
+  color: #df5575;
+
+  animation: twinkle 1.8s infinite alternate;
+}
+
+
+@keyframes twinkle {
+
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+.welcome-box {
+  text-align: center;
+}
+
+
+.small-title {
+  font-family: "Patrick Hand", cursive;
+
+  color: #df5575;
+
+  font-size: 23px;
+
+  margin-bottom: 15px;
+}
+
+
+.welcome-box h1 {
+  font-family: "Berkshire Swash", cursive;
+
+  color: #df5575;
+
+  font-size: clamp(48px, 9vw, 85px);
+
+  line-height: 0.95;
+
+  margin-bottom: 25px;
+
+  text-shadow: 2px 3px rgba(255,255,255,0.8);
+}
+
+
+.cute-text {
+  font-family: "Patrick Hand", cursive;
+
+  font-size: 22px;
+
+  margin-bottom: 25px;
+
+  color: #77727a;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+h2 {
+  font-family: "Berkshire Swash", cursive;
+
+  color: #df5575;
+
+  font-size: clamp(32px, 6vw, 48px);
+
+  text-align: center;
+
+  margin-bottom: 8px;
+}
+
+
+.subtitle {
+  font-family: "Patrick Hand", cursive;
+
+  font-size: 22px;
+
+  color: #77727a;
+
+  margin-bottom: 30px;
+
+  text-align: center;
+}
+
+
+/* =========================
+   BOUQUETS
+========================= */
+
+.bouquets {
+  width: min(100%, 1000px);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 25px;
+
+  align-items: end;
+
+  margin-bottom: 35px;
+}
+
+
+.bouquet {
+  background: rgba(255,255,255,0.9);
+
+  border-radius: 25px;
+
+  padding: 20px;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.bouquet:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 20px 35px rgba(70,100,110,0.18);
+}
+
+
+.bouquet img {
+  width: 100%;
+
+  height: 260px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+.bouquet p {
+  color: #df5575;
+
+  font-family: "Patrick Hand", cursive;
+
+  font-size: 22px;
+
+  margin-top: 10px;
+}
+
+
+.final-button {
+  margin-top: 5px;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-button {
+  position: absolute;
+
+  top: 20px;
+
+  left: 20px;
+
+  background: rgba(255,255,255,0.9);
+
+  color: #df5575;
+
+  padding: 9px 18px;
+
+  border-radius: 20px;
+
+  font-size: 15px;
+
+  z-index: 5;
+}
+
+
+/* =========================
+   PHOTO MEMORIES
+========================= */
+
+#memories {
+  justify-content: flex-start;
+
+  padding-top: 70px;
+}
+
+
+.photo-grid {
+  width: min(100%, 950px);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 18px;
+
+  margin-top: 25px;
+}
+
+
+.memory {
+  background: white;
+
+  padding: 7px;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 10px 25px rgba(60,80,90,0.15);
+
+  transition: transform 0.3s ease;
+}
+
+
+.memory:nth-child(odd) {
+  transform: rotate(-3deg);
+}
+
+
+.memory:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+
+.memory:hover {
+  transform:
+    scale(1.06)
+    rotate(0deg);
+}
+
+
+.memory img {
+  width: 100%;
+
+  aspect-ratio: 3 / 4;
+
+  object-fit: cover;
+
+  display: block;
+
+  border-radius: 4px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message-box {
+  width: min(100%, 1000px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 70px;
+}
+
+
+.large-photo {
+  width: min(45vw, 400px);
+
+  background: white;
+
+  padding: 12px;
+
+  transform: rotate(-4deg);
+
+  box-shadow:
+    0 15px 35px rgba(60,80,90,0.18);
+}
+
+
+.large-photo img {
+  width: 100%;
+
+  display: block;
+
+  aspect-ratio: 3 / 4;
+
+  object-fit: cover;
+}
+
+
+.message-text {
+  text-align: center;
+
+  position: relative;
+}
+
+
+.message-text h2 {
+  margin-bottom: 20px;
+}
+
+
+.message-text p {
+  font-family: "Berkshire Swash", cursive;
+
+  color: #df5575;
+
+  font-size: 28px;
+
+  margin: 14px 0;
+
+  animation: rise 0.8s ease both;
+}
+
+
+@keyframes rise {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+.floating {
+  color: #df5575;
+
+  font-size: 35px;
+
+  animation: float 2s infinite ease-in-out;
+}
+
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+}
+
+
+/* =========================
+   SONG
+========================= */
+
+.video-box {
+  width: min(90vw, 750px);
+
+  background: white;
+
+  padding: 10px;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 15px 35px rgba(60,80,90,0.18);
+
+  margin-top: 10px;
+}
+
+
+.video-box iframe {
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  border: none;
+
+  border-radius: 12px;
+}
+
+
+#song h3 {
+  font-family: "Patrick Hand", cursive;
+
+  color: #df5575;
+
+  font-size: 27px;
+
+  margin-top: 20px;
+}
+
+
+/* =========================
+   FINAL LETTER
+========================= */
+
+.final-content {
+  width: min(100%, 1000px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 60px;
+}
+
+
+.final-photo {
+  width: min(40vw, 360px);
+
+  background: white;
+
+  padding: 12px;
+
+  transform: rotate(-3deg);
+
+  box-shadow:
+    0 15px 35px rgba(60,80,90,0.18);
+}
+
+
+.final-photo img {
+  width: 100%;
+
+  display: block;
+
+  aspect-ratio: 3 / 4;
+
+  object-fit: cover;
+}
+
+
+.letter {
+  width: min(100%, 480px);
+
+  background: #fffdf7;
+
+  padding: 35px;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 15px 35px rgba(60,80,90,0.12);
+}
+
+
+.letter h2 {
+  text-align: left;
+
+  font-size: 40px;
+}
+
+
+.letter p {
+  font-family: "Patrick Hand", cursive;
+
+  font-size: 21px;
+
+  line-height: 1.5;
+
+  margin: 15px 0;
+
+  color: #625f65;
+}
+
+
+.signature {
+  color: #df5575;
+
+  font-family: "Berkshire Swash", cursive;
+
+  font-size: 22px;
+
+  margin-top: 25px;
+
+  text-align: right;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .page {
+    padding:
+      65px 15px 30px;
+  }
+
+
+  .bouquets {
+    grid-template-columns: 1fr;
+
+    width: min(90%, 350px);
+
+    gap: 18px;
+  }
+
+
+  .bouquet {
+    padding: 12px;
+  }
+
+
+  .bouquet img {
+    height: 170px;
+  }
+
+
+  .photo-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 14px;
+  }
+
+
+  .message-box {
+    flex-direction: column;
+
+    gap: 35px;
+  }
+
+
+  .large-photo {
+    width: min(75vw, 300px);
+  }
+
+
+  .message-text p {
+    font-size: 24px;
+  }
+
+
+  .final-content {
+    flex-direction: column;
+
+    gap: 35px;
+  }
+
+
+  .final-photo {
+    width: min(70vw, 300px);
+  }
+
+
+  .letter {
+    padding: 25px;
+  }
+
+
+  .letter h2 {
+    font-size: 34px;
+  }
+
+
+  .letter p {
+    font-size: 19px;
+  }
+
+  }
