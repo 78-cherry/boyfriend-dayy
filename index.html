@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>For You ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=DM+Sans:wght@400;500;600;700&family=Patrick+Hand&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main>
+
+  <!-- =========================
+       PASSWORD
+  ========================== -->
+
+  <section class="page active" id="password">
+
+    <div class="password-box">
+
+      <div class="heart">♡</div>
+
+      <h1>Enter the password</h1>
+
+      <p>A little surprise is waiting for you...</p>
+
+      <input
+        id="passwordInput"
+        type="password"
+        placeholder="Password"
+        maxlength="10"
+      >
+
+      <button onclick="checkPassword()">
+        Open ♡
+      </button>
+
+      <p id="passwordError"></p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       WELCOME
+  ========================== -->
+
+  <section class="page" id="welcome">
+
+    <div class="stars">
+      ✦　♡　✦　★　✦
+    </div>
+
+    <div class="welcome-box">
+
+      <p class="small-title">
+        a little surprise for you
+      </p>
+
+      <h1>
+        Happy<br>
+        Boyfriend's Day ♡
+      </h1>
+
+      <p class="cute-text">
+        made with lots of love
+      </p>
+
+      <button onclick="showPage('bouquets')">
+        Continue →
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BOUQUETS
+  ========================== -->
+
+  <section class="page" id="bouquets">
+
+    <h2>Choose a little surprise ♡</h2>
+
+    <p class="subtitle">
+      Click any bouquet
+    </p>
+
+    <div class="bouquets">
+
+      <!-- BOUQUET 1 -->
+
+      <div class="bouquet"
+           onclick="showPage('memories')">
+
+        <img
+          src="bouquet1.jpg"
+          alt="First bouquet"
+        >
+
+        <p>Memories ♡</p>
+
+      </div>
+
+
+      <!-- BOUQUET 2 -->
+
+      <div class="bouquet"
+           onclick="showPage('message')">
+
+        <img
+          src="bouquet2.jpg"
+          alt="Second bouquet"
+        >
+
+        <p>A little message ♡</p>
+
+      </div>
+
+
+      <!-- BOUQUET 3 -->
+
+      <div class="bouquet"
+           onclick="showPage('song')">
+
+        <img
+          src="bouquet3.jpg"
+          alt="Third bouquet"
+        >
+
+        <p>A song for you ♡</p>
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="final-button"
+      onclick="showPage('final')">
+
+      One last thing... ♡
+
+    </button>
+
+  </section>
+
+
+  <!-- =========================
+       MEMORIES
+  ========================== -->
+
+  <section class="page" id="memories">
+
+    <button
+      class="back-button"
+      onclick="showPage('bouquets')">
+
+      ← Back
+
+    </button>
+
+    <h2>Some of my favourite memories ♡</h2>
+
+    <div class="photo-grid">
+
+      <div class="memory">
+        <img src="photo1.jpg" alt="Memory 1">
+      </div>
+
+      <div class="memory">
+        <img src="photo2.jpg" alt="Memory 2">
+      </div>
+
+      <div class="memory">
+        <img src="photo3.jpg" alt="Memory 3">
+      </div>
+
+      <div class="memory">
+        <img src="photo4.jpg" alt="Memory 4">
+      </div>
+
+      <div class="memory">
+        <img src="photo5.jpg" alt="Memory 5">
+      </div>
+
+      <div class="memory">
+        <img src="photo6.jpg" alt="Memory 6">
+      </div>
+
+      <div class="memory">
+        <img src="photo7.jpg" alt="Memory 7">
+      </div>
+
+      <div class="memory">
+        <img src="photo8.jpg" alt="Memory 8">
+      </div>
+
+      <div class="memory">
+        <img src="photo9.jpg" alt="Memory 9">
+      </div>
+
+      <div class="memory">
+        <img src="photo10.jpg" alt="Memory 10">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MESSAGE
+  ========================== -->
+
+  <section class="page" id="message">
+
+    <button
+      class="back-button"
+      onclick="showPage('bouquets')">
+
+      ← Back
+
+    </button>
+
+    <div class="message-box">
+
+      <div class="large-photo">
+
+        <img
+          src="photo11.jpg"
+          alt="Favourite photo"
+        >
+
+      </div>
+
+
+      <div class="message-text">
+
+        <div class="floating">♡</div>
+
+        <h2> A little reminder...</h2>
+
+        <p>in a world full of people i would still look for you</p>
+
+        <p> in every random story I'd still tell you first</p>
+
+        <p>in every good moment I'd still want you beside me</p>
+
+        <p>because life feels a little sweeter when it has you in it</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SONG
+  ========================== -->
+
+  <section class="page" id="song">
+
+    <button
+      class="back-button"
+      onclick="showPage('bouquets')">
+
+      ← Back
+
+    </button>
+
+    <h2>A song for you ♡</h2>
+
+    <p class="subtitle">
+      This one reminded me of you.
+    </p>
+
+    <div class="video-box">
+
+      <iframe
+        src="https://www.youtube.com/embed/5rLcgAwn-0A"
+        title="Until I Found You"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+
+    </div>
+
+    <h3>Until I Found You ♡</h3>
+
+  </section>
+
+
+  <!-- =========================
+       FINAL LETTER
+  ========================== -->
+
+  <section class="page" id="final">
+
+    <button
+      class="back-button"
+      onclick="showPage('bouquets')">
+
+      ← Back
+
+    </button>
+
+    <div class="final-content">
+
+      <div class="final-photo">
+
+        <img
+          src="photo12.jpg"
+          alt="Favourite memory"
+        >
+
+      </div>
+
+
+      <div class="letter">
+
+        <h2>For my cutiee♡</h2>
+
+        <p>Aapn hya relationship mdhe aalo and this bf gf day's also came into our lives. Obviously ek day tuzya existence la define nhi kru shkt but why not celebrate it specifically too. Tu Mazya life mdhe asna if a blessing for me coz mazyasathi tu faqt ek boyfriend Kiva favourite person Kiva ek lover nhiys.
+          
+        </p>
+
+        <p>Tu to ahes,
+Jyala pratyek chhoti-mothi gosht sangavishi vatte —
+
+Aaj kay zala mahitiy?
+Mla bhook lagliyy
+Mla raag yetoyy
+Mi ky kruu ??
+Mi he kasa kruuu ??
+Mi Kashi distey ??
+Etc etc.....
+          
+        </p>
+
+        <p>Tuzyashi bolyavr mann agdi light and relaxed vatta
+
+In short.... you're my person ♡
+          
+        </p>
+
+        <p> I LOVE YOU SAMUDII
+          
+        </p>
+
+        <div class="signature">
+          Happy Boyfriend's Day ♡
+          <br><br>
+          With lots of love
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+          </html>
